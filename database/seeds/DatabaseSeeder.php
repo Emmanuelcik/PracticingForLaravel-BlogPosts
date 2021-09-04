@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
             "email" => "correo@correo.com",
             "password" => bcrypt("12345678"),
         ]);
+
+        factory(App\Post::class, 24)->create();
     }
 }

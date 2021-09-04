@@ -3,16 +3,21 @@
 namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-use Sluggable;
+
 class Post extends Model
 {
-    
+    use Sluggable;
 
-    public function sluggable(): array
-    {
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array{
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title',
+                'onUpdate'=>true
             ]
         ];
     }
